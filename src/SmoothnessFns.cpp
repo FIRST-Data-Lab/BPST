@@ -16,7 +16,7 @@ using namespace Rcpp;
 List tdata(NumericMatrix V, NumericMatrix Tr) {
   Function which("which");
   int m=Tr.nrow();
-  int n=Tr.ncol();
+  // int n=Tr.ncol();
   int numEdges=0;
   NumericVector Ti(3);
   NumericVector edge1(2), edge2(2), edge3(2);
