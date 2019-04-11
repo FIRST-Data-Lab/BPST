@@ -68,13 +68,12 @@ uu.grid=rep(u.grid,each=n2.grid)
 vv.grid=rep(v.grid,times=n1.grid)
 Z.grid=as.matrix(cbind(uu.grid,vv.grid))
 func=1; sigma=0.1;
-gridpoints=DataGenerator(Z.grid,V,Tr,func,sigma,2019)
+gridpoints=data.BPST(Z.grid,V,Tr,func,sigma,2019)
 Y.grid=gridpoints$Y; mu.grid=gridpoints$mu;
 ind=gridpoints$ind; ind.grid=(1:n.grid)[ind==1];
 # Simulation parameters
 n=2000;
 ind.sam=sort(sample(ind.grid,n))
 Y=as.matrix(gridpoints$Y[ind.sam]); Z=as.matrix(gridpoints$Z[ind.sam,]);
-mu=as.matrix(gridpoints$mu[ind.sam]);
 cv.BPST(Y,Z,V,Tr,d,r,lambda=10^seq(-6,6,by=0.5),nfold=10)
 }
