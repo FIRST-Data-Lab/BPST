@@ -12,7 +12,7 @@
 #' \cr
 #' @return None
 #'
-#' @details This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
+#' @details This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia and Li Wang from the Iowa State University.
 #'
 #' @export
 #'

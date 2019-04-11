@@ -16,7 +16,7 @@
 #' \item{ind}{A vector of dimension \code{n} by one matrix that lists whether the points are inside of a given triangulation. 0 -- represents outside the triangulation, while 1 -- represents inside the triangulation.}
 #' \item{ind.inside}{A vector contains the indexes of all the points which are inside the triangulation.}
 #' 
-#' @details This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
+#' @details This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia and Li Wang from the Iowa State University.
 #'
 #' @examples
 #' xx=c(-0.25,0.75,0.25,1.25)

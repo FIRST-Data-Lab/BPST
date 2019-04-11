@@ -33,5 +33,5 @@ A list of vectors and matrice, including:
 This function generate the testing dataset for bivariate spline smoothing.
 }
 \details{
-This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
+This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia and Li Wang from the Iowa State University.
 }

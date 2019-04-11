@@ -36,7 +36,7 @@
 #' \item{K}{The thin-plate energy function.}
 #' \item{tria.all}{The area of each triangle within the given triangulation.}
 #'
-#' @details This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
+#' @details This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia and Li Wang from the Iowa State University.
 #'
 #' @examples
 #' # Triangulation

@@ -48,7 +48,7 @@ A list of vectors and matrice, including:
 This function generates the basis for bivariate spline over triangulation.
 }
 \details{
-This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
+This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia and Li Wang from the Iowa State University.
 }
 \examples{
 # example 1

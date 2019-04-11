@@ -18,7 +18,7 @@
 #' \item{Z}{The coordinates.}
 #' \item{ind}{A vector contains the indicators whether the point is inside the given triangulation.}
 #'
-#' @details This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
+#' @details This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia and Li Wang from the Iowa State University.
 #' 
 #' @export
 data.BPST <- function(Z,V,Tr,func=1,sigma=0.1,iter=2019){

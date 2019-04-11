@@ -28,7 +28,7 @@ A list of vectors, including:
 This function is used to decided whether a point is inside of a given triangulation.
 }
 \details{
-This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
+This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia and Li Wang from the Iowa State University.
 }
 \examples{
 xx=c(-0.25,0.75,0.25,1.25)

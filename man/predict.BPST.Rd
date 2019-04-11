@@ -20,7 +20,7 @@ A vector of predicted values is returned.
 This function is used to make predictions of a fitted BPST object.
 }
 \details{
-This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
+This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia and Li Wang from the Iowa State University.
 }
 \examples{
 # Triangulation

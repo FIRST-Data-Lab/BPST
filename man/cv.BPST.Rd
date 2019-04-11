@@ -51,7 +51,7 @@ cv.BPST(Y, Z, V, Tr, d = 5, r = 1, lambda = 10^seq(-6, 6, by = 0.5),
 This function implements k-fold cross-validation via bivariate penlized spline over triangulation, and returns the mean squared prediction error.
 }
 \details{
-This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
+This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia and Li Wang from the Iowa State University.
 }
 \examples{
 # Triangulation
