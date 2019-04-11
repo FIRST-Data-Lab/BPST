@@ -1,8 +1,6 @@
-#' Model Fitting using Bivariate Penalized Spline over Triangulation
+#' Generate testing dataset for bivariate spline smoothing.
 #'
-#' This function conducts the model fitting via bivariate penlized spline over triangulation.
-#'
-#' @importFrom Matrix Matrix
+#' This function generate the testing dataset for bivariate spline smoothing.
 #' 
 #' @param Z The cooridinates of dimension \code{n} by two. Each row is the coordinates of a point.
 #' \cr
@@ -23,7 +21,7 @@
 #' @details This R program is modified based on the Matlab program written by Ming-Jun Lai from the University of Georgia ang Li Wang from the Iowa State University.
 #' 
 #' @export
-DataGenerator <- function(Z,V,Tr,func=1,sigma=0.1,iter=2019){
+data.BPST <- function(Z,V,Tr,func=1,sigma=0.1,iter=2019){
   set.seed(iter)
   # location information
   if(isempty(Z)){

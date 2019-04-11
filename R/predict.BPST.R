@@ -16,7 +16,7 @@
 #'
 #' @export
 #'
-pred.BPST <- function(mfit,Zpred=NULL){
+predict.BPST <- function(mfit,Zpred=NULL){
   if(identical(Zpred,mfit$Z) | isempty(Zpred)){
     Ypred <- mfit$beta_hat
     Ind.inside <- mfit$Ind.inside
