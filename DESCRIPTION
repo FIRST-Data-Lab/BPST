@@ -11,6 +11,15 @@ Author@R: c(person("Lily", "Wang", role = "aut", email = "lilywang@iastate.edu")
           person("Jue", "Wang", role = "trl"),
           person("Yueying", "Wang", role = "trl"),
           person("Shan", "Yu", role = "trl"))
+Author: Lily Wang [aut],
+  Ming-Jun Lai [aut],
+  GuanNan Wang [trl, cre],
+  Myungjin Kim, [trl],
+  Xinyi Li, [trl],
+  Jingru Mu, [trl],
+  Jue Wang, [trl],
+  Yueying Wang, [trl],
+  Shan Yu, [trl]
 Maintainer: GuanNan Wang <gwang01@wm.edu>
 Description: Spline smoothing via bivariate spline over triangulation.
 License: GPL (>= 2)
