@@ -22,7 +22,7 @@ B0_Generator <- function(V0,Tr0,Z){
   ind2 <- as.numeric(names(J))
   l <- sapply(J,length)
   x2 <- rep(ind2,l)
-  B <- sparseMatrix(i=x1,j=x2,x=rep(1,length(x1)))
+  B <- sparseMatrix(i=x1,j=x2,x=rep(1,length(x1)),dims=c(n,nrow(Tr0)))
   B <- B[apply(B,1,function(x) !all(x==0)),]
   
   list(B=B,ind.inside=sort(unique(x1)))
