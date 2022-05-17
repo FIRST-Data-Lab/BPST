@@ -35,42 +35,42 @@
 #'
 #' @examples
 #' # example 1
-#' xx=c(-0.25,0.75,0.25,1.25)
-#' yy=c(-0.25,0.25,0.75,1.25)
-#' Z=cbind(xx,yy)
-#' d=4; r=1;
-#' V0=rbind(c(0,0),c(1,0),c(1,1),c(0,1))
-#' Tr0=rbind(c(1,2,3),c(1,3,4))
-#' basis(V0,Tr0,d,r,Z)
+#' xx = c(-0.25, 0.75, 0.25, 1.25)
+#' yy = c(-0.25, 0.25, 0.75,1 .25)
+#' Z = cbind(xx, yy)
+#' d = 4; r = 1;
+#' V0 = rbind(c(0, 0), c(1, 0), c(1, 1), c(0, 1))
+#' Tr0 = rbind(c(1, 2, 3), c(1, 3, 4))
+#' basis(V0, Tr0, d, r, Z)
 #' @export
 
-basis <- function(V,Tr,d=5,r=1,Z,Hmtx=TRUE,Kmtx=TRUE,QR=TRUE,TA=TRUE){
+basis <- function(V, Tr, d = 5, r = 1, Z, Hmtx = TRUE, Kmtx = TRUE, QR = TRUE, TA = TRUE){
   V <- as.matrix(V); Tr <- as.matrix(Tr);
-  Z <- matrix(Z,ncol=2)
+  Z <- matrix(Z, ncol = 2)
   nz <- nrow(Z)
   # Piecewise Constant Spline;
-  if(d== -1){
+  if(d == -1){
     B0 <- B0_Generator(V,Tr,Z)
     B <- B0$B; Bi <- B0$B; Ind <- 1:nrow(B);
     Ind.inside <- B0$ind.inside
     Hmtx <- FALSE; Kmtx <- FALSE; QR <- FALSE;
   }
   # High-Order Spline;
-  if(d>1){
+  if(d >= 1){
     sfold <- 100; nfold <- ceiling(nz/sfold);
-    if(nz%%sfold==1 & nfold>1) nfold <- nfold-1;
+    if(nz%%sfold == 1 & nfold > 1) nfold <- nfold-1;
     B <- c(); Bi <- c(); Ind <- c();
     for(ii in 1:nfold){
-      if(ii<nfold){
+      if(ii < nfold){
         idi <- ((ii-1)*sfold+1):(ii*sfold);
       }
-      if(ii==nfold){
+      if(ii == nfold){
         idi <- ((ii-1)*sfold+1):nz;
       }
-      Zi <- matrix(Z[idi,],ncol=2)
-      bsi <- BSpline(V,Tr,d,r,Zi[,1],Zi[,2])
+      Zi <- matrix(Z[idi, ], ncol = 2)
+      bsi <- BSpline(V, Tr, d, r, Zi[,1], Zi[,2])
       Bii <- bsi$Bi
-      Bii <- Matrix(Bii,sparse=TRUE)
+      Bii <- Matrix(Bii, sparse = TRUE)
       Indi <- bsi$Ind
       if(!isempty(Bii)){
         Bi <- rbind(Bi,Bii); Ind <- c(Ind,idi[Indi]);
@@ -78,41 +78,42 @@ basis <- function(V,Tr,d=5,r=1,Z,Hmtx=TRUE,Kmtx=TRUE,QR=TRUE,TA=TRUE){
     }
     
     Ind.inside <- sort(unique(Ind))
-    if(length(Ind.inside)<nz){
+    if(length(Ind.inside) < nz){
       warning("Warning: some location points are out of the triangulation, so the number of the rows of the B matrix is smaller than the number of locations.")
     }
-    B <- matrix(0,nrow=max(Ind),ncol=ncol(Bi))
+    B <- matrix(0, nrow = max(Ind), ncol = ncol(Bi))
     B[Ind,] <- as.matrix(Bi)
-    B <- B[apply(B,1,function(x) !all(x==0)),]
-    B <- Matrix(B,sparse=TRUE)
+    B <- B[apply(B, 1, function(x) !all(x==0)),]
+    B <- Matrix(B, sparse = TRUE)
   }
   
-  if(Hmtx==FALSE | d<2 | r<0){
+  if(Hmtx == FALSE | d < 1 | r < 0){
     # warning("Warning: smoothness matrix is not generated.")
     H <- NA; Q2 <- NA;
   }else{
-    H <- smoothness(V,Tr,d,r)
-    if(QR==TRUE){
+    H <- smoothness(V, Tr, d, r)
+    if(QR == TRUE){
       H <- as.matrix(H)
       Q2 <- qrH(H)
     }else{
       Q2 <- NA
     }
-    H <- Matrix(H,sparse=TRUE)
+    H <- Matrix(H, sparse = TRUE)
   }
   
-  if(Kmtx==FALSE | d<2){
+  if(Kmtx == FALSE | d < 1){
     # warning("Warning: energy matrix is not generated.")
     K <- NA
   }else{
-    K <- energy(V,Tr,d)
-    K <- Matrix(K,sparse=TRUE)
+    K <- energy(V, Tr, d)
+    K <- Matrix(K, sparse = TRUE)
   }
   
-  if(TA==FALSE){
+  if(TA == FALSE){
     tria.all <- NA
   }else{
-    tria.all <- TArea(V,Tr,Z)
+    tria.all <- TArea(V, Tr, Z)
   }
-  list(Bi=Bi,B=B,Ind=Ind,Ind.inside=Ind.inside,H=H,Q2=Q2,K=K,tria.all=tria.all,V=V,Tr=Tr,d=d,r=r)
+  list(Bi = Bi, B = B, Ind = Ind, Ind.inside = Ind.inside, H = H, Q2 = Q2, 
+       K = K, tria.all = tria.all, V = V, Tr = Tr, d = d, r = r)
 }
