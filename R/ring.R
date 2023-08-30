@@ -1,3 +1,5 @@
+#' @export
+
 ring <- function(Tr0, V, Tr, TV, n.layer = 2){
   I.tr = c(Tr0)
   V1 = c(); T1 = c();
