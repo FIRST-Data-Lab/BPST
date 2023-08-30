@@ -48,5 +48,5 @@ mfit=fit.BPST(Y,Z,V,Tr,d,r,lambda=10^seq(-6,6,by=0.5))
 rmse=sqrt(mean((Y-mfit$Yhat)^2,na.rm=TRUE))
 mpred=predict(mfit,Z.grid)
 rmspe=sqrt(mean((Y.grid-mpred$Ypred)^2,na.rm=TRUE))
-cat("rmse =",rmse,"and rmspe =",rmspe,"\\n")
+cat("rmse =",rmse,"and rmspe =",rmspe,"\n")
 }

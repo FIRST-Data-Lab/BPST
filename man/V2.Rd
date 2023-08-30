@@ -4,7 +4,9 @@
 \name{V2}
 \alias{V2}
 \title{Example of vertices of an irregular domain.}
-\format{\code{V2} is a matrix of coordinates of the vertices over an irregular domain.}
+\format{
+\code{V2} is a matrix of coordinates of the vertices over an irregular domain.
+}
 \usage{
 data('V2')
 }

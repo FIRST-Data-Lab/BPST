@@ -4,8 +4,7 @@
 \alias{basis}
 \title{Bivariate Spline Basis Function}
 \usage{
-basis(V, Tr, d = 5, r = 1, Z, Hmtx = TRUE, Kmtx = TRUE,
-  QR = TRUE, TA = TRUE)
+basis(V, Tr, d = 5, r = 1, Z, Hmtx = TRUE, Kmtx = TRUE, QR = TRUE, TA = TRUE)
 }
 \arguments{
 \item{V}{The \code{N} by two matrix of vertices of a triangulation, where \code{N} is the number of vertices. Each row is the coordinates for a vertex.
@@ -52,11 +51,11 @@ This R program is modified based on the Matlab program written by Ming-Jun Lai f
 }
 \examples{
 # example 1
-xx=c(-0.25,0.75,0.25,1.25)
-yy=c(-0.25,0.25,0.75,1.25)
-Z=cbind(xx,yy)
-d=4; r=1;
-V0=rbind(c(0,0),c(1,0),c(1,1),c(0,1))
-Tr0=rbind(c(1,2,3),c(1,3,4))
-basis(V0,Tr0,d,r,Z)
+xx = c(-0.25, 0.75, 0.25, 1.25)
+yy = c(-0.25, 0.25, 0.75,1 .25)
+Z = cbind(xx, yy)
+d = 4; r = 1;
+V0 = rbind(c(0, 0), c(1, 0), c(1, 1), c(0, 1))
+Tr0 = rbind(c(1, 2, 3), c(1, 3, 4))
+basis(V0, Tr0, d, r, Z)
 }

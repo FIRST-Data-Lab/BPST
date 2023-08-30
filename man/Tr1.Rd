@@ -4,7 +4,9 @@
 \name{Tr1}
 \alias{Tr1}
 \title{Example of triangulation of a rectangular domain.}
-\format{\code{Tr1} is a matrix of a triangulation over a rectangular domain.}
+\format{
+\code{Tr1} is a matrix of a triangulation over a rectangular domain.
+}
 \usage{
 data('Tr1')
 }

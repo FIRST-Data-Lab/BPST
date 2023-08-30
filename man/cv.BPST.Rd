@@ -4,8 +4,20 @@
 \alias{cv.BPST}
 \title{Cross-validation using Bivariate Penalized Spline over Triangulation}
 \usage{
-cv.BPST(Y, Z, V, Tr, d = 5, r = 1, lambda = 10^seq(-6, 6, by = 0.5),
-  nfold = 10, Hmtx = TRUE, Kmtx = TRUE, QR = TRUE, TA = TRUE)
+cv.BPST(
+  Y,
+  Z,
+  V,
+  Tr,
+  d = 5,
+  r = 1,
+  lambda = 10^seq(-6, 6, by = 0.5),
+  nfold = 10,
+  Hmtx = TRUE,
+  Kmtx = TRUE,
+  QR = TRUE,
+  TA = TRUE
+)
 }
 \arguments{
 \item{Y}{The response variable observed over the domain.

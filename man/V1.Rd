@@ -4,7 +4,9 @@
 \name{V1}
 \alias{V1}
 \title{Example of vertices of a rectangular domain.}
-\format{\code{V1} is a matrix of coordinates of the vertices over a rectangular domain.}
+\format{
+\code{V1} is a matrix of coordinates of the vertices over a rectangular domain.
+}
 \usage{
 data('V1')
 }

@@ -4,8 +4,19 @@
 \alias{fit.BPST}
 \title{Model Fitting using Bivariate Penalized Spline over Triangulation}
 \usage{
-fit.BPST(Y, Z, V, Tr, d = 5, r = 1, lambda = 10^seq(-6, 6, by = 0.5),
-  Hmtx = TRUE, Kmtx = TRUE, QR = TRUE, TA = TRUE)
+fit.BPST(
+  Y,
+  Z,
+  V,
+  Tr,
+  d = 5,
+  r = 1,
+  lambda = 10^seq(-6, 6, by = 0.5),
+  Hmtx = TRUE,
+  Kmtx = TRUE,
+  QR = TRUE,
+  TA = TRUE
+)
 }
 \arguments{
 \item{Y}{The response variable observed over the domain.
@@ -84,6 +95,6 @@ mfit=fit.BPST(Y,Z,V,Tr,d,r,lambda=10^seq(-6,6,by=0.5))
 rmse=sqrt(mean((Y-mfit$Yhat)^2,na.rm=TRUE))
 mpred=predict(mfit,Z.grid)
 rmspe=sqrt(mean((Y.grid-mpred$Ypred)^2,na.rm=TRUE))
-cat("rmse =",rmse,"and rmspe =",rmspe,"\\n")
+cat("rmse =",rmse,"and rmspe =",rmspe,"\n")
 plot(mfit,Z.grid)
 }
