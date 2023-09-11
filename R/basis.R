@@ -48,6 +48,7 @@ basis <- function(V, Tr, d = 5, r = 1, Z, Hmtx = TRUE, Kmtx = TRUE, QR = TRUE, T
   V <- as.matrix(V); Tr <- as.matrix(Tr);
   Z <- matrix(Z, ncol = 2)
   nz <- nrow(Z)
+  
   # Piecewise Constant Spline;
   if(d == -1){
     B0 <- B0_Generator(V,Tr,Z)
@@ -55,6 +56,7 @@ basis <- function(V, Tr, d = 5, r = 1, Z, Hmtx = TRUE, Kmtx = TRUE, QR = TRUE, T
     Ind.inside <- B0$ind.inside
     Hmtx <- FALSE; Kmtx <- FALSE; QR <- FALSE;
   }
+  
   # High-Order Spline;
   if(d >= 1){
     sfold <- 100; nfold <- ceiling(nz/sfold);
@@ -87,7 +89,7 @@ basis <- function(V, Tr, d = 5, r = 1, Z, Hmtx = TRUE, Kmtx = TRUE, QR = TRUE, T
     B <- Matrix(B, sparse = TRUE)
   }
   
-  if(Hmtx == FALSE | d < 1 | r < 0){
+  if(Hmtx == FALSE | d < 1 | r < 0 | nrow(Tr) <= 1){
     # warning("Warning: smoothness matrix is not generated.")
     H <- NA; Q2 <- NA;
   }else{

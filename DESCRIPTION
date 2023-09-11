@@ -28,4 +28,4 @@ Depends:
     Matrix,
     pracma
 LinkingTo: Rcpp
-RoxygenNote: 6.1.1
+RoxygenNote: 7.2.0
